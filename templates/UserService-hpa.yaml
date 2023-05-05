@@ -1,12 +1,12 @@
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: '{{.Values.microservices.UserService.serviceName}}'
+  name: '{{.Values.microservices.userservice.serviceName}}'
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: '{{.Values.microservices.UserService.serviceName}}'
+    name: '{{.Values.microservices.userservice.serviceName}}'
   minReplicas: 0
   maxReplicas: 0
   metrics:

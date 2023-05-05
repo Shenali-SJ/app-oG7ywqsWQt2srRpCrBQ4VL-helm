@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: '{{.Values.microservices.UserService.serviceName}}'
+  name: '{{.Values.microservices.userservice.serviceName}}'
   labels:
-    app: '{{.Values.microservices.UserService.serviceName}}'
+    app: '{{.Values.microservices.userservice.serviceName}}'
 spec:
   replicas: 0
   selector:
     matchLabels:
-      app: '{{.Values.microservices.UserService.serviceName}}'
+      app: '{{.Values.microservices.userservice.serviceName}}'
   template:
     metadata:
       labels:
-        app: '{{.Values.microservices.UserService.serviceName}}'
+        app: '{{.Values.microservices.userservice.serviceName}}'
     spec:
       containers:
-      - name: '{{.Values.microservices.UserService.serviceName}}'
-        image: '{{.Values.microservices.UserService.dockerImage}}'
+      - name: '{{.Values.microservices.userservice.serviceName}}'
+        image: '{{.Values.microservices.userservice.dockerImage}}'
         ports:
         - containerPort: 0
         env: []
@@ -25,5 +25,5 @@ spec:
             cpu: 100m
             memory: 500Mi
           limits:
-            cpu: '{{.Values.microservices.UserService.maxCPU}}'
-            memory: '{{.Values.microservices.UserService.maxMemory}}'
+            cpu: '{{.Values.microservices.userservice.maxCPU}}'
+            memory: '{{.Values.microservices.userservice.maxMemory}}'

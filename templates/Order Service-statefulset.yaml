@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: '{{.Values.microservices.orderservice.serviceName}}'
+  name: '{{.Values.microservices.Order Service.serviceName}}'
 spec:
-  serviceName: '{{.Values.microservices.orderservice.serviceName}}'
+  serviceName: '{{.Values.microservices.Order Service.serviceName}}'
   selector:
     matchLabels:
-      app: '{{.Values.microservices.orderservice.serviceName}}-mysql'
+      app: '{{.Values.microservices.Order Service.serviceName}}-mysql'
   replicas: 3
   template:
     metadata:
       labels:
-        app: '{{.Values.microservices.orderservice.serviceName}}-mysql'
+        app: '{{.Values.microservices.Order Service.serviceName}}-mysql'
     spec:
       containers:
-      - name: '{{.Values.microservices.orderservice.serviceName}}-mysql'
+      - name: '{{.Values.microservices.Order Service.serviceName}}-mysql'
         image: mysql:latest
         ports:
         - containerPort: 3306
@@ -23,12 +23,12 @@ spec:
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
             configMapKeyRef:
-              name: '{{.Values.microservices.orderservice.serviceName}}'
+              name: '{{.Values.microservices.Order Service.serviceName}}'
               key: MYSQL_ROOT_PASSWORD
         - name: MYSQL_DATABASE
           valueFrom:
             configMapKeyRef:
-              name: '{{.Values.microservices.orderservice.serviceName}}'
+              name: '{{.Values.microservices.Order Service.serviceName}}'
               key: MYSQL_DATABASE
         volumeMounts:
         - name: mysql-data
@@ -36,10 +36,10 @@ spec:
       volumes:
       - name: mysql-data
         persistentVolumeClaim:
-          claimName: '{{.Values.microservices.orderservice.serviceName}}'
+          claimName: '{{.Values.microservices.Order Service.serviceName}}'
   volumeClaimTemplates:
   - metadata:
-      name: '{{.Values.microservices.orderservice.serviceName}}'
+      name: '{{.Values.microservices.Order Service.serviceName}}'
     spec:
       accessModes:
       - ReadWriteOnce

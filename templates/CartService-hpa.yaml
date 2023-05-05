@@ -1,12 +1,12 @@
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: '{{.Values.microservices.CartService.serviceName}}'
+  name: '{{.Values.microservices.cartservice.serviceName}}'
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: '{{.Values.microservices.CartService.serviceName}}'
+    name: '{{.Values.microservices.cartservice.serviceName}}'
   minReplicas: 0
   maxReplicas: 0
   metrics:

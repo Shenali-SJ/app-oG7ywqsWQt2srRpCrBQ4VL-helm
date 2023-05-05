@@ -4,7 +4,7 @@ metadata:
   name: mysql
 spec:
   selector:
-    app: '{{.Values.microservices.orderservice.serviceName}}-mysql'
+    app: '{{.Values.microservices.Order Service.serviceName}}-mysql'
   ports:
   - protocol: TCP
     port: 3306

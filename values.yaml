@@ -1,5 +1,5 @@
 projectId: app-oG7ywqsWQt2srRpCrBQ4VL
-appName: myapp
+appName: ordermanagementapp
 description: First application
 imageURL: http://image.com/image
 version: 1.0.0
@@ -7,8 +7,8 @@ hostName: ""
 clusterURL: ""
 clusterIPs: []
 microservices:
-  CartService:
-    serviceName: CartService
+  Cart Service:
+    serviceName: Cart Service
     configs: []
     avgReplicas: 0
     minReplicas: 0
@@ -20,8 +20,8 @@ microservices:
     envs: {}
     serviceEvaluation:
       kubeConfigType: []
-  OrderService:
-    serviceName: OrderService
+  Order Service:
+    serviceName: Order Service
     configs: []
     avgReplicas: 0
     minReplicas: 0
@@ -34,8 +34,48 @@ microservices:
     serviceEvaluation:
       kubeConfigType:
       - statefulSetBased
-  UserService:
-    serviceName: UserService
+  User-Service:
+    serviceName: User-Service
+    configs: []
+    avgReplicas: 0
+    minReplicas: 0
+    maxReplicas: 0
+    maxCPU: ""
+    maxMemory: ""
+    dockerImage: ""
+    containerPort: 0
+    envs: {}
+    serviceEvaluation:
+      kubeConfigType: []
+  cartservice:
+    serviceName: cartservice
+    configs: []
+    avgReplicas: 0
+    minReplicas: 0
+    maxReplicas: 0
+    maxCPU: ""
+    maxMemory: ""
+    dockerImage: ""
+    containerPort: 0
+    envs: {}
+    serviceEvaluation:
+      kubeConfigType: []
+  orderservice:
+    serviceName: orderservice
+    configs: []
+    avgReplicas: 0
+    minReplicas: 0
+    maxReplicas: 0
+    maxCPU: ""
+    maxMemory: ""
+    dockerImage: ""
+    containerPort: 0
+    envs: {}
+    serviceEvaluation:
+      kubeConfigType:
+      - statefulSetBased
+  userservice:
+    serviceName: userservice
     configs: []
     avgReplicas: 0
     minReplicas: 0
