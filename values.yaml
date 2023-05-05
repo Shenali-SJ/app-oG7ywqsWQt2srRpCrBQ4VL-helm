@@ -1,0 +1,60 @@
+projectId: app-oG7ywqsWQt2srRpCrBQ4VL
+appName: myapp
+description: First application
+imageURL: http://image.com/image
+version: 1.0.0
+hostName: ""
+clusterURL: ""
+clusterIPs: []
+microservices:
+  CartService:
+    serviceName: CartService
+    configs: []
+    avgReplicas: 0
+    minReplicas: 0
+    maxReplicas: 0
+    maxCPU: ""
+    maxMemory: ""
+    dockerImage: ""
+    containerPort: 0
+    envs: {}
+    serviceEvaluation:
+      kubeConfigType: []
+  OrderService:
+    serviceName: OrderService
+    configs: []
+    avgReplicas: 0
+    minReplicas: 0
+    maxReplicas: 0
+    maxCPU: ""
+    maxMemory: ""
+    dockerImage: ""
+    containerPort: 0
+    envs: {}
+    serviceEvaluation:
+      kubeConfigType:
+      - statefulSetBased
+  UserService:
+    serviceName: UserService
+    configs: []
+    avgReplicas: 0
+    minReplicas: 0
+    maxReplicas: 0
+    maxCPU: ""
+    maxMemory: ""
+    dockerImage: ""
+    containerPort: 0
+    envs: {}
+    serviceEvaluation:
+      kubeConfigType: []
+monitoring: false
+evaluationResult:
+  language: Java
+  database: MySQL
+  hasdockerized: false
+  haskubernetesservice: false
+  haskubernetesdeployment: false
+  microservices:
+  - CartService
+  - OrderService
+  - UserService
